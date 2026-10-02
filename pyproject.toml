@@ -12,10 +12,14 @@ license = { file = "LICENSE" }
 authors = [
     { name = "Giancarlo Comneno" },
 ]
-dependencies = []
+dependencies = [
+    "fastapi",
+    "uvicorn",
+]
 
 [dependency-groups]
 dev = [
+    "httpx2",
     "mypy",
     "pytest",
     "ruff",
