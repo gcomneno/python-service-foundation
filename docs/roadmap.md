@@ -196,7 +196,7 @@ Defaults:
 
 ## M0.4 — API routing and versioning
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -228,11 +228,15 @@ explicit API-version boundary.
 - routing tests pass;
 - existing quality gates remain green.
 
+### Verified commit
+
+`880d77bf78f84e4fd589e16a940618333fd85667`
+
 ---
 
 ## M0.5 — Canonical HTTP and error model
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
