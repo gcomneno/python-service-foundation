@@ -89,3 +89,101 @@ docker compose down
 
 The Compose runtime does not define persistent application volumes, so
 shutdown should not leave persistent application state behind.
+
+## Quick start
+
+Install the locked development environment:
+
+```bash
+uv sync --frozen --python 3.12
+```
+
+Run the validation suite:
+
+```bash
+uv lock --check
+uv run --frozen ruff format --check .
+uv run --frozen ruff check .
+uv run --frozen mypy
+uv run --frozen pytest -W error
+```
+
+Start the local container runtime:
+
+```bash
+docker compose up --build -d
+```
+
+Verify it:
+
+```bash
+curl http://127.0.0.1:8000/health/live
+curl http://127.0.0.1:8000/health/ready
+```
+
+Stop it:
+
+```bash
+docker compose down
+```
+
+## HTTP surface
+
+Versioned application API:
+
+```text
+/api/v1/
+```
+
+Operational endpoints:
+
+```text
+GET /health/live
+GET /health/ready
+```
+
+Requests and responses support correlation through the `X-Request-ID` header.
+
+## Project documentation
+
+Detailed documentation is kept under `docs/`:
+
+- [Architecture](docs/architecture.md) — application structure, routing,
+  observability, runtime, and CI boundaries;
+- [Development](docs/development.md) — setup, quality gates, tests, Docker, and
+  Compose workflow;
+- [Configuration](docs/configuration.md) — environment-variable reference and
+  runtime configuration;
+- [Design decisions](docs/decisions.md) — architecture choices and invariants;
+- [Roadmap](docs/roadmap.md) — milestone state and acceptance criteria.
+
+## Foundation boundary
+
+Python Service Foundation is intentionally domain-neutral.
+
+The foundation does not contain:
+
+- sports-domain models;
+- external sports-provider integration;
+- provider credentials;
+- database or Redis infrastructure;
+- reverse proxy or TLS configuration;
+- customer code, assets, payloads, or proprietary naming.
+
+Those concerns belong to later milestones or downstream projects.
+
+## Continuous integration
+
+The repository includes a GitHub Actions validation workflow that enforces:
+
+- lockfile consistency;
+- frozen dependency installation;
+- formatting;
+- linting;
+- strict static typing;
+- tests with warnings treated as errors;
+- Compose configuration validation;
+- production-container build validation.
+
+Third-party actions are pinned to immutable commit SHAs and the workflow uses
+read-only repository permissions.
