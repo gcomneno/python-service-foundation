@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "GiadaWare Python Service Foundation"
+type: software
+authors:
+  - given-names: "Giancarlo"
+    family-names: "Cicellyn Comneno"
+repository-code: "https://github.com/gcomneno/python-service-foundation"
+url: "https://github.com/gcomneno/python-service-foundation"
+license: MIT
