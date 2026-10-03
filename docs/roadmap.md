@@ -383,7 +383,7 @@ Make an HTTP request traceable through application logs.
 
 ## M0.10 — Docker runtime
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -406,11 +406,15 @@ Package the service into a reproducible production-oriented container image.
 - tests or smoke checks verify the built image;
 - development-only artifacts are not required at runtime.
 
+### Verified commit
+
+`a7f8f99dcba6659cd162c7f7007780226c469b1f`
+
 ---
 
 ## M0.11 — Compose development runtime
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
