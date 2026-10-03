@@ -480,7 +480,7 @@ Move local quality gates into reproducible continuous integration.
 
 ## M0.13 — Documentation and architecture
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -504,11 +504,15 @@ history.
 - public/private boundaries are documented;
 - current architecture matches documentation.
 
+### Verified commit
+
+`ca03045c47f04620ac388d7fd1dad7860e2f5bd7`
+
 ---
 
 ## M0.14 — Clean-room and public-release audit
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
