@@ -414,7 +414,7 @@ Package the service into a reproducible production-oriented container image.
 
 ## M0.11 — Compose development runtime
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -440,11 +440,15 @@ infrastructure prematurely.
 - service becomes reachable;
 - shutdown leaves no unexpected persistent application state.
 
+### Verified commit
+
+`adf0c44ca77d0a94fd20acc216925654946f9ff1`
+
 ---
 
 ## M0.12 — CI hardening
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
