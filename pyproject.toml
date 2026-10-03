@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python-service-foundation"
-version = "0.1.0"
+version = "0.1.1"
 description = "Domain-neutral foundation for production-minded Python HTTP services"
 readme = "README.md"
 requires-python = ">=3.12"
