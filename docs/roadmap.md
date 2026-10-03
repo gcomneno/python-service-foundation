@@ -354,7 +354,7 @@ Produce machine-readable, operationally useful logs.
 
 ## M0.9 — Correlation and request ID
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -375,11 +375,15 @@ Make an HTTP request traceable through application logs.
 - response exposes the agreed request-ID header;
 - concurrent requests do not share identifiers accidentally.
 
+### Verified commit
+
+`f0c39e36b7263151fa6b8764e92589e12ad4cce8`
+
 ---
 
 ## M0.10 — Docker runtime
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
