@@ -1,5 +1,21 @@
 # Design decisions
 
+## Project identity
+
+The public project name is **GiadaWare Python Service Foundation**.
+
+The stable technical repository/package name remains
+`python-service-foundation`.
+
+**PSF** is the informal shorthand used when context is unambiguous.
+
+The public positioning line is:
+
+> A minimal, audited production baseline for Python/FastAPI services.
+
+The branding decision does not alter package imports, runtime configuration,
+container behavior, API contracts, or the clean-room boundary.
+
 This document records architecture decisions that are important to preserve when
 the foundation is reused or extended.
 

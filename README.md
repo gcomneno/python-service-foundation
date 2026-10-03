@@ -1,4 +1,10 @@
-# Python Service Foundation
+# GiadaWare Python Service Foundation
+
+**A minimal, audited production baseline for Python/FastAPI services.**
+
+Technical repository/package name: `python-service-foundation`.
+
+Informal shorthand: **PSF**.
 
 A small, domain-neutral foundation for building production-minded Python HTTP
 services.
