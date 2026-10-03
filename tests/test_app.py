@@ -14,7 +14,7 @@ def test_openapi_document_is_available() -> None:
 
     assert schema["info"]["title"] == "python-service-foundation"
     assert schema["info"]["version"] == "0.1.0"
-    assert sorted(schema["paths"]) == ["/api/v1/", "/health/live"]
+    assert sorted(schema["paths"]) == ["/api/v1/", "/health/live", "/health/ready"]
 
 
 def test_root_is_not_part_of_public_api() -> None:
