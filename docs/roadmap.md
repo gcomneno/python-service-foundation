@@ -512,7 +512,7 @@ history.
 
 ## M0.14 — Clean-room and public-release audit
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -536,6 +536,34 @@ independent repository.
 
 Publication is allowed only after all release gates pass and publication is
 explicitly approved.
+
+
+### Release audit result
+
+Audited commit:
+
+`646eaa9b8317a360e0110617bbafe85d83aa32c6`
+
+Technical release gates:
+
+- clean-room gate: `PASS`;
+- private-material gate: `PASS`;
+- secret/credential gate: `PASS`;
+- dependency and license gate: `PASS`;
+- documentation gate: `PASS`;
+- repository hygiene gate: `PASS`;
+- reproducible-build/test gate: `PASS`.
+
+Public-release approval:
+
+`APPROVED`
+
+Publication performed:
+
+`NO`
+
+The repository is approved as public-release-ready, but publication remains a
+separate explicit operation.
 
 ---
 
