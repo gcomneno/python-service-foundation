@@ -23,6 +23,12 @@ def test_root_is_not_part_of_public_api() -> None:
     response = client.get("/")
 
     assert response.status_code == 404
+    assert response.json() == {
+        "error": {
+            "code": "not_found",
+            "message": "Not Found",
+        }
+    }
 
 
 def test_versioned_root_endpoint() -> None:
