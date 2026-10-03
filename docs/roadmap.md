@@ -296,7 +296,7 @@ Provide a minimal process-liveness endpoint.
 
 ## M0.7 — Readiness
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -314,11 +314,15 @@ Provide a readiness boundary distinct from process liveness.
 - readiness can fail without declaring the process dead;
 - tests cover ready and not-ready states.
 
+### Verified commit
+
+`5ed195ce8fc1e37df99eb9d9b30fdcda8fc1fb9f`
+
 ---
 
 ## M0.8 — Structured logging
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
