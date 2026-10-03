@@ -32,14 +32,11 @@ its acceptance criteria to pass and the resulting change to be committed.
 
 Current verified state:
 
-- M0.1 — `COMPLETE`
-- M0.2 — `COMPLETE`
-- M0.3 — `COMPLETE`
-- M0.4 — `NEXT`
+- M0.1 through M0.14 — `COMPLETE`
 
-The repository is still a private/local learning lab.
+The Python Service Foundation repository is public.
 
-Public release has not been authorized.
+Public release has been authorized and repository publication has been completed.
 
 ---
 
@@ -560,10 +557,9 @@ Public-release approval:
 
 Publication performed:
 
-`NO`
+`YES`
 
-The repository is approved as public-release-ready, but publication remains a
-separate explicit operation.
+The public-release audit passed and repository publication has been completed.
 
 ---
 
