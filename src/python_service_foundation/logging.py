@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 from typing import TextIO
 
 from python_service_foundation.config import Environment, Settings
+from python_service_foundation.request_id import get_request_id
 
 LOGGER_NAME = "python_service_foundation"
 
@@ -45,6 +46,11 @@ class JsonFormatter(logging.Formatter):
             "service": self._service,
             "environment": self._environment,
         }
+
+        request_id = get_request_id()
+
+        if request_id is not None:
+            payload["request_id"] = request_id
 
         for field in _STRUCTURED_EXTRA_FIELDS:
             value = getattr(record, field, None)

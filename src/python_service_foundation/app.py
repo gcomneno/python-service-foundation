@@ -7,6 +7,7 @@ from python_service_foundation.config import Settings, get_settings
 from python_service_foundation.health import router as health_router
 from python_service_foundation.http_errors import register_exception_handlers
 from python_service_foundation.logging import configure_logging, get_logger, log_event
+from python_service_foundation.request_id import RequestIdMiddleware
 
 logger = get_logger("app")
 
@@ -21,6 +22,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         title=application_settings.service_name,
         version="0.1.0",
     )
+
+    application.add_middleware(RequestIdMiddleware)
 
     application.dependency_overrides[get_settings] = lambda: application_settings
     register_exception_handlers(application)

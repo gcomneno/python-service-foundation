@@ -168,3 +168,18 @@ def test_http_error_log_uses_controlled_fields() -> None:
         "status_code",
         "timestamp",
     }
+
+
+def test_structured_log_omits_request_id_outside_request_context() -> None:
+    stream = StringIO()
+    configure_logging(
+        Settings(environment="test"),
+        stream=stream,
+    )
+
+    logger = get_logger("tests")
+    log_event(logger, logging.INFO, "outside_request")
+
+    payload = _decode_single_log(stream)
+
+    assert "request_id" not in payload
