@@ -448,7 +448,7 @@ infrastructure prematurely.
 
 ## M0.12 — CI hardening
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -472,11 +472,15 @@ Move local quality gates into reproducible continuous integration.
 - dependency lockfile is enforced;
 - permissions are minimized.
 
+### Verified commit
+
+`be22d603c6f5de8c6676d099f50ac0907051a874`
+
 ---
 
 ## M0.13 — Documentation and architecture
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
