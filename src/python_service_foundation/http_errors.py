@@ -1,3 +1,4 @@
+import logging
 from http import HTTPStatus
 from typing import Any
 
@@ -7,6 +8,9 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from python_service_foundation.errors import ApplicationError
+from python_service_foundation.logging import get_logger, log_event
+
+logger = get_logger("http_errors")
 
 
 def _error_payload(code: str, message: str) -> dict[str, dict[str, str]]:
@@ -47,6 +51,14 @@ async def application_error_handler(
     if not isinstance(exc, ApplicationError):
         raise TypeError("unexpected exception type")
 
+    log_event(
+        logger,
+        logging.WARNING,
+        "application_error",
+        code=exc.code,
+        status_code=exc.status_code,
+    )
+
     return JSONResponse(
         status_code=exc.status_code,
         content=_error_payload(exc.code, exc.message),
@@ -61,6 +73,14 @@ async def request_validation_error_handler(
 
     if not isinstance(exc, RequestValidationError):
         raise TypeError("unexpected exception type")
+
+    log_event(
+        logger,
+        logging.WARNING,
+        "request_validation_error",
+        code="validation_error",
+        status_code=HTTPStatus.UNPROCESSABLE_ENTITY,
+    )
 
     return JSONResponse(
         status_code=HTTPStatus.UNPROCESSABLE_ENTITY,
@@ -79,6 +99,16 @@ async def http_exception_handler(
 
     if not isinstance(exc, StarletteHTTPException):
         raise TypeError("unexpected exception type")
+
+    level = logging.INFO if exc.status_code < 500 else logging.WARNING
+
+    log_event(
+        logger,
+        level,
+        "http_error",
+        code=_http_error_code(exc.status_code),
+        status_code=exc.status_code,
+    )
 
     return JSONResponse(
         status_code=exc.status_code,
