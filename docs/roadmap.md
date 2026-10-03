@@ -236,7 +236,7 @@ explicit API-version boundary.
 
 ## M0.5 — Canonical HTTP and error model
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -262,11 +262,15 @@ on them.
 - internal exception details are not leaked by default;
 - error payload structure is documented and tested.
 
+### Verified commit
+
+`3e85a6275024ae2682a00b21913c59d15795de27`
+
 ---
 
 ## M0.6 — Liveness
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
