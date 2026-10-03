@@ -43,3 +43,49 @@ The canonical project roadmap is maintained in [`docs/roadmap.md`](docs/roadmap.
 - pytest
 
 Runtime HTTP dependencies will be introduced in later milestones.
+
+## Local development with Docker Compose
+
+The local development runtime uses Docker Compose and the production-oriented
+Dockerfile. It intentionally runs a single application service without
+database, Redis, reverse proxy, HTTPS, bind mounts, or persistent volumes.
+
+Start the service:
+
+```bash
+docker compose up --build -d
+```
+
+Inspect service state:
+
+```bash
+docker compose ps
+```
+
+Verify the application:
+
+```bash
+curl http://127.0.0.1:8000/health/live
+curl http://127.0.0.1:8000/health/ready
+```
+
+Inspect application logs:
+
+```bash
+docker compose logs app
+```
+
+After source changes, rebuild and restart with:
+
+```bash
+docker compose up --build -d
+```
+
+Stop the local runtime:
+
+```bash
+docker compose down
+```
+
+The Compose runtime does not define persistent application volumes, so
+shutdown should not leave persistent application state behind.

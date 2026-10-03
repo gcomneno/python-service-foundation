@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+    image: python-service-foundation:dev
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      PSF_ENVIRONMENT: development
+      PSF_SERVICE_NAME: python-service-foundation-compose
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          from urllib.request import urlopen;
+          response = urlopen("http://127.0.0.1:8000/health/live", timeout=2);
+          raise SystemExit(0 if response.status == 200 else 1)
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    stop_grace_period: 10s
