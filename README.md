@@ -11,7 +11,7 @@ services.
 
 ## Status
 
-Early learning-lab baseline. Not yet approved for public release.
+Early learning-lab baseline. Public repository; no tagged release has been published yet.
 
 ## Goals
 
