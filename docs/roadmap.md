@@ -322,7 +322,7 @@ Provide a readiness boundary distinct from process liveness.
 
 ## M0.8 — Structured logging
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -346,11 +346,15 @@ Produce machine-readable, operationally useful logs.
 - tests verify key logging behavior;
 - secrets are not intentionally logged.
 
+### Verified commit
+
+`00ca2e8cc979d5b9f16401283b617159d2ca6c11`
+
 ---
 
 ## M0.9 — Correlation and request ID
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
