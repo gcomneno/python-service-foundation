@@ -11,7 +11,7 @@ services.
 
 ## Status
 
-Early learning-lab baseline. Public repository; no tagged release has been published yet.
+Early learning-lab baseline. Public repository; v0.1.0 is the first tagged public release.
 
 ## Goals
 
