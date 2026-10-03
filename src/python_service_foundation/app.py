@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from python_service_foundation.api.v1.routes import router as v1_router
 from python_service_foundation.config import Settings, get_settings
 
 
@@ -11,9 +12,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         version="0.1.0",
     )
 
-    @application.get("/")
-    async def root() -> dict[str, str]:
-        return {"service": application_settings.service_name}
+    application.dependency_overrides[get_settings] = lambda: application_settings
+    application.include_router(v1_router, prefix="/api/v1")
 
     return application
 

@@ -14,12 +14,21 @@ def test_openapi_document_is_available() -> None:
 
     assert schema["info"]["title"] == "python-service-foundation"
     assert schema["info"]["version"] == "0.1.0"
+    assert sorted(schema["paths"]) == ["/api/v1/"]
 
 
-def test_root_endpoint() -> None:
+def test_root_is_not_part_of_public_api() -> None:
     client = TestClient(app)
 
     response = client.get("/")
+
+    assert response.status_code == 404
+
+
+def test_versioned_root_endpoint() -> None:
+    client = TestClient(app)
+
+    response = client.get("/api/v1/")
 
     assert response.status_code == 200
     assert response.json() == {"service": "python-service-foundation"}
@@ -34,7 +43,7 @@ def test_application_uses_supplied_settings() -> None:
     )
     client = TestClient(configured_app)
 
-    response = client.get("/")
+    response = client.get("/api/v1/")
     schema = client.get("/openapi.json")
 
     assert response.status_code == 200
