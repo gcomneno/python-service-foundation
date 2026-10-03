@@ -270,7 +270,7 @@ on them.
 
 ## M0.6 — Liveness
 
-**Status:** `NEXT`
+**Status:** `COMPLETE`
 
 ### Goal
 
@@ -288,11 +288,15 @@ Provide a minimal process-liveness endpoint.
 - endpoint does not depend on Redis, databases, providers, or external
   services.
 
+### Verified commit
+
+`a3411d31b0701cc8b9767c214d41fb8e342a687c`
+
 ---
 
 ## M0.7 — Readiness
 
-**Status:** `PLANNED`
+**Status:** `NEXT`
 
 ### Goal
 
