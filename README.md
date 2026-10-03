@@ -30,6 +30,10 @@ This foundation does not currently include:
 
 Those concerns belong to downstream applications or later milestones.
 
+## Roadmap
+
+The canonical project roadmap is maintained in [`docs/roadmap.md`](docs/roadmap.md).
+
 ## Development baseline
 
 - Python 3.12+
